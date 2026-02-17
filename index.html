@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noura Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="loader"><div class="spinner"></div></div>
+
+
+  <div id="cursor"></div>
+
+ 
+  <header id="header">
+    <nav class="nav container">
+      <a href="#hero" class="logo">Mon portfolio</a>
+      <ul class="nav__list">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="burger"><span></span><span></span><span></span></div>
+    </nav>
+  </header>
+
+ 
+  <section id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero__content">
+      <h1>Noura Diaby </h1>
+      <h2 id="typing"></h2>
+      <a href="#about" class="btn-hero">Découvrir mon univers</a>
+    </div>
+  </section>
+
+
+  <section id="about">
+  <div class="about__container container">
+    <div class="about__photo">
+      <img src="assets/grey.png" alt="Photo Noura">
+    </div>
+    <div class="about__text">
+      <h2>Qui je suis</h2>
+      <p>
+        Je suis actuellement étudiante en Bachelor Informatique et Projets Numériques.
+        Passionnée par l’informatique depuis mon parcours scolaire, j’ai toujours aimé
+        comprendre comment les choses fonctionnent, réparer, organiser, aider et surtout
+        créer des projets concrets.
+      </p>
+      <p>
+        Donner vie à une idée, la structurer, la développer et la voir fonctionner est ce
+        qui me motive le plus. Pour moi, l’informatique est à la fois un outil technique
+        et un moyen de résoudre des problèmes de manière créative et efficace.
+      </p>
+
+      <h2>Mon parcours</h2>
+      <div class="about-timeline">
+        <div class="timeline-item left">
+          <div class="content">
+            <h4>Bachelor Informatique & Projets Numériques</h4>
+            <p>ISEP – Institut Supérieur d’Électronique de Paris<br>Spécialisation : Transformation numérique des entreprises</p>
+          </div>
+          <span class="dot"></span>
+          <span class="date">2024 - 2027</span>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="content">
+            <h4>Baccalauréat Général</h4>
+            <p>Établissement d'application Jean Piaget<br>Spécialités : Math, Physique-Chimie, SVT</p>
+          </div>
+          <span class="dot"></span>
+          <span class="date">2023 - 2024</span>
+        </div>
+      </div>
+</section>
+  </section>
+
+  
+  <section id="skills">
+    <div class="container">
+      <h2>Compétences</h2>
+      <div class="skills__grid">
+        <div class="skill-card">
+          <h3> Développement Web</h3>
+          <ul>
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3> Data & Analyse</h3>
+          <ul>
+            <li>SQL</li><li>MySQL</li><li>Python</li><li>Excel</li><li>Google Sheets</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3> Cybersécurité</h3>
+          <ul>
+            <li>OWASP</li><li>JWT</li>
+        </div>
+        <div class="skill-card">
+          <h3> Outils & Environnement</h3>
+          <ul>
+            <li>Git / GitHub</li><li>VS Code</li><li>Notion</li><li>Jira</li><li>Trello</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="projects">
+  <div class="container">
+    <h2>Projets</h2>
+    <div class="projects__grid">
+      
+      <div class="project-card">
+        <img src="assets/budgeasy.png" alt="BudgEasy">
+        <div class="project-info">
+          <h3> BudgEasy</h3>
+          <p>Application de gestion de budget pour étudiants.</p>
+          <p><strong>Stack :</strong> HTML, CSS, JS</p>
+          <div class="project-buttons">
+            <a href="https://nouraaa1221.github.io/budgeasy/" target="_blank" class="btn btn-full">Voir le site en ligne</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/cueasy.png" alt="CuEasy">
+        <div class="project-info">
+          <h3> CuEasy</h3>
+          <p>Générateur de recettes avec filtrage par ingrédients.</p>
+          <p><strong>Stack :</strong> HTML, CSS, JS</p>
+          <div class="project-buttons">
+            <a href="https://talel12s.github.io/cueseay/" target="_blank" class="btn btn-full">Voir le site en ligne</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/security.png" alt="Connexion Sécurisée">
+        <div class="project-info">
+          <h3>🔐 Connexion Sécurisée</h3>
+          <p>Validation de mot de passe robuste et indicateurs de sécurité.</p>
+          <p><strong>Stack :</strong> JS, HTML, CSS</p>
+          <div class="project-buttons">
+            <a href="https://nouraaa1221.github.io/connexion-securisee/" target="_blank" class="btn btn-full">Voir le site en ligne</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image-placeholder">
+          <span>⚙️</span>
+        </div>
+  
+        <div class="project-info">
+          <h3>⚙️ Chaos Engineering</h3>
+          <p>Projet en conception pour tester la résilience d’un système.</p>
+          <p><strong>Stack :</strong> En cours</p>
+          <div class="project-buttons">
+            <span class="btn-dev-status">📍 Phase de conception</span>
+          </div>
+       </div>
+      </div>
+</section>
+
+
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="7ad2bd0c-eb88-4b7c-bcef-cd941371f83f">
+    
+        <input type="text" name="name" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+    
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/noura-diaby-a56b5030b/" target="_blank"><img src="assets/Linkedin.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
