@@ -1,6 +1,6 @@
 
 :root {
-  /* Palette claire */
+  
   --bg:          #faf9f7;
   --bg-alt:      #f4f2ee;
   --bg-card:     #ffffff;
@@ -8,8 +8,8 @@
   --text:        #1a1917;
   --text-muted:  #6b6760;
   --text-light:  #9e9890;
-  --accent:      #1a1917;       /* noir sur fond clair */
-  --accent-inv:  #faf9f7;       /* fond sur noir */
+  --accent:      #1a1917;      
+  --accent-inv:  #faf9f7;       
 
 
   --font-serif: 'Cormorant Garamond', Georgia, serif;
