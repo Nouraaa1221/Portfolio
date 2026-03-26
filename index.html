@@ -1,226 +1,344 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noura Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Noura — Développeuse Web, spécialisée en interfaces modernes, élégantes et performantes." />
+  <title>Noura — Etudiante en Bachelor Informatiques </title>
+
+  <!-- Cormorant Garamond (serif display élégant) + Jost (sans propre) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
+  <!-- Barre de progression de lecture -->
+  <div class="progress-bar" id="progress-bar" role="progressbar" aria-label="Progression de lecture"></div>
 
-  <div id="cursor"></div>
+  <!-- ============================
+       HEADER
+  ============================ -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#accueil" class="logo" aria-label="Accueil">Noura<span class="logo-dot">.</span></a>
 
-  <header id="header">
-    <nav class="nav container">
-      <a href="#hero" class="logo">Mon portfolio</a>
-      <ul class="nav__list">
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list" role="list">
+          <li><a href="#accueil"     class="nav__link">Accueil</a></li>
+          <li><a href="#apropos"     class="nav__link">À propos</a></li>
+          <li><a href="#competences" class="nav__link">Compétences</a></li>
+          <li><a href="#projets"     class="nav__link">Projets</a></li>
+          <li><a href="#contact"     class="nav__link nav__link--cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
+          <i class="fa-solid fa-sun"  id="icon-sun"></i>
+          <i class="fa-solid fa-moon" id="icon-moon"></i>
+        </button>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <section id="hero">
-    <canvas id="heroCanvas"></canvas>
-    <div class="hero__content">
-      <h1>Noura Diaby</h1>
-      <h2 id="typing"></h2>
-      <a href="#about" class="btn-hero">Découvrir mon univers</a>
-    </div>
-  </section>
+  <main>
 
-  <section id="about">
-    <div class="about__container container">
-      <div class="about__photo">
-        <img src="assets/grey.png" alt="Photo Noura">
+    <!-- ============================
+         HERO
+    ============================ -->
+    <section class="hero" id="accueil" aria-label="Présentation">
+      <div class="hero__inner">
+        <p class="hero__label fade-up" style="--d:.1s"></p>
+        <h1 class="hero__title fade-up" style="--d:.28s">
+          Bonjour,<br />je suis <em>Noura Diaby</em>
+        </h1>
+
+        <div class="hero__cta fade-up" style="--d:.62s">
+          <a href="#projets" class="btn btn--filled">Voir mes projets</a>
+          <a href="#contact" class="btn btn--text">Me contacter <span aria-hidden="true">→</span></a>
+        </div>
       </div>
-      <div class="about__text">
-        <h2>Qui je suis</h2>
-        <p>
-          Je suis actuellement étudiante en Bachelor Informatique et Projets Numériques.
-          Passionnée par l’informatique depuis mon parcours scolaire, j’ai toujours aimé
-          comprendre comment les choses fonctionnent, réparer, organiser, aider et surtout
-          créer des projets concrets.
-        </p>
-        <p>
-          Donner vie à une idée, la structurer, la développer et la voir fonctionner est ce
-          qui me motive le plus. Pour moi, l’informatique est à la fois un outil technique
-          et un moyen de résoudre des problèmes de manière créative et efficace.
-        </p>
+      <div class="hero__deco" aria-hidden="true">
+        <div class="hero__line"></div>
 
-        <h2>Mon parcours</h2>
-        <div class="about-timeline">
-          <div class="timeline-item left">
-            <div class="content">
-              <h4>Bachelor Informatique & Projets Numériques</h4>
-              <p>ISEP – Institut Supérieur d’Électronique de Paris<br>Spécialisation : Transformation numérique des entreprises</p>
+      </div>
+    </section>
+
+    <!-- ============================
+         À PROPOS
+    ============================ -->
+    <section class="section apropos" id="apropos" aria-labelledby="h-apropos">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__kicker">01 — À propos</span>
+          <h2 class="section__title" id="h-apropos">Passion &amp; précision</h2>
+        </header>
+
+        <div class="apropos__grid">
+          <div class="apropos__visual reveal">
+            <div class="portrait">
+              <div class="portrait__inner">
+                  <img src="assets/grey.png" alt="Portrait de Noura " class="portrait__img">
+              </div>
+              <div class="portrait__badge">2+ ans d'expérience</div>
             </div>
-            <span class="dot"></span>
-            <span class="date">2024 - 2027</span>
           </div>
 
-          <div class="timeline-item right">
-            <div class="content">
-              <h4>Baccalauréat Général</h4>
-              <p>Établissement d'application Jean Piaget<br>Spécialités : Math, Physique-Chimie, SVT</p>
-            </div>
-            <span class="dot"></span>
-            <span class="date">2023 - 2024</span>
+          <div class="apropos__text reveal">
+            <p class="lead">
+              Je suis actuellement étudiante en Bachelor Informatique et Projets Numériques. Passionnée par l’informatique depuis mon parcours scolaire, j’ai toujours aimé comprendre comment les choses fonctionnent, réparer, organiser, aider et surtout créer des projets concrets.
+
+Donner vie à une idée, la structurer, la développer et la voir fonctionner est ce qui me motive le plus. Pour moi, l’informatique est à la fois un outil technique et un moyen de résoudre des problèmes de manière créative et efficace.
+            </p>
+
+            <a href="#contact" class="btn btn--filled">Travaillons ensemble</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
+    <!-- ============================
+         COMPÉTENCES
+    ============================ -->
+    <section class="section competences" id="competences" aria-labelledby="h-competences">
     <div class="container">
-      <h2>Compétences</h2>
-      <div class="skills__grid">
-        <div class="skill-card">
-          <h3>Développement Web</h3>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-        </div>
+        <header class="section__header reveal">
+            <span class="section__kicker">02 — Compétences</span>
+            <h2 class="section__title" id="h-competences">Mon arsenal</h2>
+        </header>
 
-        <div class="skill-card">
-          <h3>Data & Analyse</h3>
-          <ul>
-            <li>SQL</li>
-            <li>MySQL</li>
-            <li>Python</li>
-            <li>Excel</li>
-            <li>Google Sheets</li>
-          </ul>
-        </div>
+        <div class="skills reveal">
 
-        <div class="skill-card">
-          <h3>Cybersécurité</h3>
-          <ul>
-            <li>OWASP</li>
-            <li>JWT</li>
-          </ul>
-        </div>
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-solid fa-code" aria-hidden="true"></i> Développement Web Fullstack</span>
+                    <span class="skill__pct">90 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:90%"></div>
+                </div>
+            </article>
 
-        <div class="skill-card">
-          <h3>Outils & Environnement</h3>
-          <ul>
-            <li>Git / GitHub</li>
-            <li>VS Code</li>
-            <li>Notion</li>
-            <li>Jira</li>
-            <li>Trello</li>
-          </ul>
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-brands fa-python" aria-hidden="true"></i> Programmation Python</span>
+                    <span class="skill__pct">85 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:85%"></div>
+                </div>
+            </article>
+
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Cybersécurité & Protection</span>
+                    <span class="skill__pct">70 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:70%"></div>
+                </div>
+            </article>
+
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-brands fa-linux" aria-hidden="true"></i> Administration Linux</span>
+                    <span class="skill__pct">75 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:75%"></div>
+                </div>
+            </article>
+
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-solid fa-database" aria-hidden="true"></i> Bases de données (SQL)</span>
+                    <span class="skill__pct">80 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:80%"></div>
+                </div>
+            </article>
+
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-brands fa-docker" aria-hidden="true"></i> Docker & Conteneurisation</span>
+                    <span class="skill__pct">60 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:60%"></div>
+                </div>
+            </article>
+
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-solid fa-list-check" aria-hidden="true"></i> Gestion de Projets Agile</span>
+                    <span class="skill__pct">85 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:85%"></div>
+                </div>
+            </article>
+
+            <article class="skill">
+                <div class="skill__meta">
+                    <span><i class="fa-brands fa-figma" aria-hidden="true"></i> Design & Prototypage (Figma)</span>
+                    <span class="skill__pct">75 %</span>
+                </div>
+                <div class="skill__track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="skill__fill" style="--p:75%"></div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+    <!-- ============================
+         PROJETS
+    ============================ -->
+    <section class="section projets" id="projets" aria-labelledby="h-projets">
+  <div class="container">
+    <header class="section__header reveal">
+      <span class="section__kicker">03 — Projets</span>
+      <h2 class="section__title" id="h-projets">Réalisations</h2>
+    </header>
+
+    <div class="projets__grid">
+
+      <article class="card reveal">
+        <div class="card__visual">
+          <img src="assets/budgeasy.png" alt="Aperçu BudgEasy">
+        </div>
+        <div class="card__body">
+          <div class="card__tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <h3 class="card__title">BudgEasy</h3>
+          <p class="card__desc">Application de gestion de budget optimisée pour les étudiants.</p>
+          <div class="card__links">
+            <a href="https://nouraaa1221.github.io/budgeasy/" target="_blank" class="link-ul link-ul--accent">Voir le site en ligne <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" style="--reveal-delay:.1s">
+        <div class="card__visual">
+          <img src="assets/cueasy.png" alt="Aperçu CuEasy">
+        </div>
+        <div class="card__body">
+          <div class="card__tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <h3 class="card__title">CuEasy</h3>
+          <p class="card__desc">Générateur de recettes intelligent avec filtrage par ingrédients.</p>
+          <div class="card__links">
+            <a href="https://talel12s.github.io/cueseay/" target="_blank" class="link-ul link-ul--accent">Voir le site en ligne <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" style="--reveal-delay:.2s">
+        <div class="card__visual">
+          <img src="assets/security.png" alt="Aperçu Sécurité">
+        </div>
+        <div class="card__body">
+          <div class="card__tags"><span>JS</span><span>Cyber</span><span>Web</span></div>
+          <h3 class="card__title">Connexion Sécurisée</h3>
+          <p class="card__desc">Système de validation de mot de passe robuste avec indicateurs de sécurité.</p>
+          <div class="card__links">
+            <a href="https://nouraaa1221.github.io/connexion-securisee/" target="_blank" class="link-ul link-ul--accent">Voir le site en ligne <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+
+
+      <article class="card reveal" style="--reveal-delay:.4s">
+        <div class="card__visual">
+          <img src="assets/nao.png" alt="Aperçu Nao-Senior">
+        </div>
+        <div class="card__body">
+          <div class="card__tags"><span>Three.js</span><span>WebGL</span><span>NAOqi</span></div>
+          <h3 class="card__title">Nao-Senior</h3>
+          <p class="card__desc">Interface web pour robot compagnon utilisant la 3D et WebGL.</p>
+          <div class="card__links">
+            <a href="https://nouraaa1221.github.io/Nao-project/" target="_blank" class="link-ul link-ul--accent">Voir le projet <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" style="--reveal-delay:.3s">
+        <div class="card__visual">
+          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); font-size: 3rem;">⚙️</div>
+        </div>
+        <div class="card__body">
+          <div class="card__tags"><span>Conception</span><span>Résilience</span></div>
+          <h3 class="card__title">Chaos Engineering</h3>
+          <p class="card__desc">Projet de recherche sur la résilience des systèmes informatiques.</p>
+          <div class="card__links">
+            <span class="link-ul">Phase de conception</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+    <!-- ============================
+         CONTACT
+    ============================ -->
+    <section class="section contact" id="contact" aria-labelledby="h-contact">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__kicker">04 — Contact</span>
+          <h2 class="section__title" id="h-contact">Travaillons <em>ensemble</em></h2>
+        </header>
+
+        <div class="contact__grid">
+          <div class="contact__side reveal">
+            <p>Vous avez un projet ou une proposition ? Je lis chaque message avec attention.</p>
+            <ul class="contact__details" role="list">
+              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:nourfatdiaby@gmail.com.com">nourfatdiaby@gmail.com</a></li>
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>France</span></li>
+            </ul>
+            <nav class="socials" aria-label="Réseau social">
+
+              <a href="https://www.linkedin.com/in/noura-diaby-a56b5030b/" class="social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+
+            </nav>
+          </div>
+
+          <form class="contact__form reveal" id="contact-form" novalidate>
+            <div class="field">
+              <input type="text"  id="f-name"    placeholder=" " required autocomplete="name" />
+              <label for="f-name">Votre nom</label>
+            </div>
+            <div class="field">
+              <input type="email" id="f-email"   placeholder=" " required autocomplete="email" />
+              <label for="f-email">Votre email</label>
+            </div>
+            <div class="field">
+              <textarea           id="f-message" placeholder=" " required rows="5"></textarea>
+              <label for="f-message">Votre message</label>
+            </div>
+            <button type="submit" class="btn btn--filled btn--full" id="submit-btn">
+              Envoyer le message
+            </button>
+          </form>
         </div>
       </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Noura Diaby </p>
+      <a href="#accueil" class="footer__back">Haut de page ↑</a>
     </div>
-  </section>
+  </footer>
 
-  <section id="projects">
-    <div class="container">
-      <h2>Projets</h2>
-      <div class="projects__grid">
-
-        <div class="project-card">
-          <img src="assets/budgeasy.png" alt="BudgEasy">
-          <div class="project-info">
-            <h3>BudgEasy</h3>
-            <p>Application de gestion de budget pour étudiants.</p>
-            <p><strong>Stack :</strong> HTML, CSS, JS</p>
-            <div class="project-buttons">
-              <a href="https://nouraaa1221.github.io/budgeasy/" target="_blank" class="btn btn-full">Voir le site en ligne</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <img src="assets/cueasy.png" alt="CuEasy">
-          <div class="project-info">
-            <h3>CuEasy</h3>
-            <p>Générateur de recettes avec filtrage par ingrédients.</p>
-            <p><strong>Stack :</strong> HTML, CSS, JS</p>
-            <div class="project-buttons">
-              <a href="https://talel12s.github.io/cueseay/" target="_blank" class="btn btn-full">Voir le site en ligne</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <img src="assets/security.png" alt="Connexion Sécurisée">
-          <div class="project-info">
-            <h3>🔐 Connexion Sécurisée</h3>
-            <p>Validation de mot de passe robuste et indicateurs de sécurité.</p>
-            <p><strong>Stack :</strong> JS, HTML, CSS</p>
-            <div class="project-buttons">
-              <a href="https://nouraaa1221.github.io/connexion-securisee/" target="_blank" class="btn btn-full">Voir le site en ligne</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-image-placeholder">
-            <span>⚙️</span>
-          </div>
-          <div class="project-info">
-            <h3>⚙️ Chaos Engineering</h3>
-            <p>Projet en conception pour tester la résilience d’un système.</p>
-            <p><strong>Stack :</strong> En cours</p>
-            <div class="project-buttons">
-              <span class="btn-dev-status">📍 Phase de conception</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <img src="assets/nao.png" alt="Nao-senior">
-          <div class="project-info">
-            <h3>Nao-Senior</h3>
-            <p>Robot compagnon</p>
-            <p><strong>Stack :</strong> HTML, CSS, JS, Three.js, WebGL, NAOqi</p>
-            <div class="project-buttons">
-              <a href="https://nouraaa1221.github.io/Nao-project/" target="_blank" class="btn btn-full">Voir le projet</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="7ad2bd0c-eb88-4b7c-bcef-cd941371f83f">
-        <input type="text" name="name" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="5" placeholder="Message" required></textarea>
-        <button type="submit" class="btn">Envoyer</button>
-      </form>
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/noura-diaby-a56b5030b/" target="_blank">
-          <img src="assets/Linkedin.png" alt="LinkedIn">
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
